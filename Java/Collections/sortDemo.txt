@@ -1,0 +1,50 @@
+package com.collections;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class sortDemo {
+	public static void main(String args[]) {
+		emp emp1 = new emp("A","Hyderbad",32);
+		emp emp2 = new emp("B","Mysore",33);
+		emp emp3 = new emp("C","Chennai",34);
+		emp emp4 = new emp("D","Vellore",34);
+		ArrayList<emp> empList = new ArrayList<>();
+		empList.add(emp1);
+		empList.add(emp2);
+		empList.add(emp3);
+		empList.add(emp4);
+		empList.add(new emp("E","Mumbai",35));
+		for(emp emp1 : empList) {
+			System.out.println(emp1);
+		}
+		Collections.sort(empList, new Namesort());
+		System.out.println("Sorted by Name");
+		for(emp emp1 : empList) {
+			System.out.println(emp1);
+		}
+		Collections.sort(empList, new Comparator<emp>() {
+
+			@Override
+			public int compare(emp emp1, emp emp2) {
+				// TODO Auto-generated method stub
+				return emp1.getCity().compareTo(emp2.getCity());
+			}
+			
+		});
+		System.out.println("Sorted by City");
+		for(emp emp1 : empList) {
+			System.out.println(emp1);
+		}
+		Collections.sort(empList, (emp1,emp2)->{
+			return emp1.getEmpId().compareTo(emp2.getEmpId());
+			
+		});
+		System.out.println("Sorted by emp");
+		for(emp emp1 : empList) {
+			System.out.println(emp1);
+		}
+		
+	}
+
+}

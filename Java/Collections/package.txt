@@ -1,0 +1,29 @@
+package com.collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		emp emp1 = new emp("A","Hyderbad",32);
+		emp emp2 = new emp("B","Mysore",33);
+		emp emp3 = new emp("C","Chennai",34);
+		emp emp4 = new emp("D","Vellore",34);
+		ArrayList<emp> empList = new ArrayList<>();
+		empList.add(emp1);
+		empList.add(emp2);
+		empList.add(emp3);
+		empList.add(emp4);
+		for(emp emp : empList) {
+			System.out.println(emp);
+		}
+		Collections.sort(empList);
+		System.out.println("Sorted List");
+		for(emp emp : empList) {
+			System.out.println(emp);
+		}
+		
+	}
+}

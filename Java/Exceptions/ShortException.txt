@@ -1,0 +1,19 @@
+  
+package com.Exceptions;
+
+public class TooShortException extends Exception {
+
+	private static final long serialVersionUID = 1L;
+
+	public ShortException() {
+
+	}
+
+	public ShortException(String message) {
+		super(message);
+
+	}
+
+
+
+}
